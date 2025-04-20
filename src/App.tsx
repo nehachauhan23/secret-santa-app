@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Employee } from "./types/employee";
 import { Assignment } from "./types/assignment";
 import { generateSecretSantaPairs } from "./utils/generatePairs";
-import { downloadCSV, parseEmployeeCSV, parsePreviousYearCSV } from "./utils/csvUtils"; 
+import { downloadCSV, parseEmployeeCSV, parsePreviousYearCSV } from "./utils/csvUtils";
 
 export default function App() {
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -27,7 +27,7 @@ export default function App() {
 
     parsePreviousYearCSV(file, (previous) => {
       setPreviousPairs(previous);
-      setError(""); 
+      setError("");
     });
   };
 
@@ -42,7 +42,7 @@ export default function App() {
 
   const handleDownloadCSV = () => {
     if (assignments.length > 0) {
-      downloadCSV(assignments); 
+      downloadCSV(assignments);
     } else {
       setError("No Secret Santa pairs to download.");
     }
